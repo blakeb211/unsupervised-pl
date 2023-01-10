@@ -18,7 +18,7 @@ This program downloads wikipedia entries on various programming languages, extra
 # Use cases 
 * Monitor a set of websites for changing relationships or patterns
 * Visually summarize a large amount of information in graph form
-* Can be run on a server via a *cron job* to produce a graph that updates at regular intervals 
+* Can be run on a server via a *cron job* to produce a graph on a webpage that updates at regular intervals 
 
 # How
 * `ingest.py`
