@@ -4,6 +4,7 @@
 This program downloads wikipedia entries on various programming languages, extracts out the key **noun phrases** in the text and then produces a force-directed graph and heatmap to show the 'distances' between the programming languages.
 
 # Results
+* Force-directed graph of the document distance matrix. 
 * Shorter distances are represented with thicker lines.  
 * The distance criteria and source data can easily be tuned to pull out a particular relationship. 
 * These figures are updated every time the script is run.
