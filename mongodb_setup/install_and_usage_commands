@@ -1,0 +1,34 @@
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+echo deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+sudo apt-get update
+
+echo "deb http://security.ubuntu.com/ubuntu focal-security main" | sudo tee /etc/apt/sources.list.d/focal-security.list
+
+sudo apt-get update
+sudo apt-get install libssl1.1
+sudo apt-get install -y mongodb-org
+
+echo "mongodb-org hold" | sudo dpkg --set-selections
+echo "mongodb-org-database hold" | sudo dpkg --set-selections
+echo "mongodb-org-server hold" | sudo dpkg --set-selections
+echo "mongodb-mongosh hold" | sudo dpkg --set-selections
+echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+
+sudo systemctl start mongod
+sudo systemctl status mongodb
+
+sudo systemctl restart mongod # restart service if change config file
+
+
+mongosh # start the cli
+disableTelemetry() # turn off anon usage stats
+db.enableFreeMonitoring()
+
+# Free monitoring site
+# https://cloud.mongodb.com/freemonitoring/cluster/X7Y2JYJQ2GP7LDHNAGCZYPI7MZODYAGI
+
+# inside mongosh cli
+# show dbs 
+# use <database_name>
+# show collections
