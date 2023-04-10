@@ -1,5 +1,3 @@
-# Unsupervised machine learning on Wikipedia entries for popular programming languages 
-
 # What
 This program downloads wikipedia entries on various programming languages, extracts out the key **noun phrases** in the text and then produces a force-directed graph and heatmap to show the 'distances' between the programming languages.
 
